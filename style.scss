@@ -1,0 +1,164 @@
+@import "variables";
+
+@mixin centrar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+
+.principal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 50px;
+}
+
+.presentacion {
+  width: 50%;
+
+  h2 {
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: 55px;
+    line-height: 70px;
+    letter-spacing: 10px;
+  }
+
+  p {
+    color: $color-primary;
+    font-size: 15px;
+    line-height: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+.resaltado {
+  background: linear-gradient(
+    transparent 20%,
+    $bg-primary 20%,
+    $bg-primary 60%,
+    transparent 60%
+  );
+}
+
+.boton-base {
+  background-color: $bg-primary;
+  color: black;
+  text-decoration: none;
+  padding: 15px 25px;
+  border-radius: 4px;
+}
+
+.botones {
+  display: flex;
+  gap: 15px;
+
+  a {
+    @extend .boton-base;
+  }
+}
+
+.ilustracion {
+  width: 50%;
+  @include centrar;
+
+  img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+}
+
+.cards {
+  display: flex;
+  gap: 25px;
+  margin: 0 50px;
+}
+
+.card {
+  background-color: $bg-secondary;
+  flex: 1;
+  padding: 20px;
+  min-height: 230px;
+}
+
+.card__circulo {
+  width: 30px;
+  height: 30px;
+  border: 1px solid $color-primary;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: -5px 0 0 $bg-primary;
+  @include centrar;
+  margin-bottom: 15px;
+}
+
+.card__titulo {
+  position: relative;
+  display: inline-block;
+  isolation: isolate;
+  margin-bottom: 5px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 8px;
+    background-color: $bg-primary;
+    z-index: -1;
+  }
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 50px;
+  margin-top: 30px;
+}
+
+.redes {
+  display: flex;
+  gap: 20px;
+
+  a {
+    color: black;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    box-shadow: -3px 0 0 $bg-primary;
+    @include centrar;
+  }
+}
